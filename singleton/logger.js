@@ -13,5 +13,14 @@ class Logger {
     console.log(`${timestamp} - ${message}`);
   }
 }
-
-module.exports = Logger;
+class Singleton {
+  constructor() {
+    if (!Singleton.instance) {
+      Singleton.instance = new Logger();
+    }
+  }
+  getInstance() {
+    return Singleton.instance;
+  }
+}
+module.exports = Singleton;
