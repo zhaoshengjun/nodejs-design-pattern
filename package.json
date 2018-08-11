@@ -5,6 +5,6 @@
   "author": "Sam Zhao <zhao.shengjun@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./singleton/index.js"
+    "start": "node ./prototype/index.js"
   }
 }
