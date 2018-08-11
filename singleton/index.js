@@ -1,8 +1,7 @@
-const Logger = require("./logger");
+const logger = require("./logger");
 const Shopper = require("./shopper");
 const Store = require("./store");
 
-let logger = new Logger().getInstance();
 logger.log("Starting app...");
 
 let alex = new Shopper("alex", 500);
