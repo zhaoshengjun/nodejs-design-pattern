@@ -1,17 +1,11 @@
-const Shopper = require("./shopper");
+const scout = require("./scout");
 
-let alex = new Shopper("Alex Banks");
-alex.addItemToList("camping knife");
-alex.addItemToList("tent");
-alex.addItemToList("backpack");
-alex.addItemToList("map");
+let alex = scout.clone();
+alex.name = "Alex Banks";
 alex.addItemToList("singlshot");
 
-let eve = new Shopper("Eve Porcello");
-eve.addItemToList("camping knife");
-eve.addItemToList("tent");
-eve.addItemToList("backpack");
-eve.addItemToList("map");
+let eve = scout.clone();
+eve.name = "Eve Porcello";
 eve.addItemToList("reading light");
 
 console.log(`${alex.name}: ${alex.shoppingList}`);
