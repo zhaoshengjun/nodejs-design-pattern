@@ -1,16 +1,22 @@
-const Person = require("./person");
+const PersonBuilder = require("./personBuilder");
 
 // Employees
-let sue = new Person("Sue", true, true, 60);
-let bill = new Person("Bill", true, false, 20);
-let phil = new Person("Phil", true, false);
+let sue = new PersonBuilder("Sue")
+  .makeEmployee()
+  .makeManager(60)
+  .build();
+let bill = new PersonBuilder("Bill")
+  .makeEmployee()
+  .makePartTime()
+  .build();
+let phil = new PersonBuilder("Phil").makeEmployee().build();
 
 // Shoppers
-let charles = new Person(
-  "Charles",
-  false,
-  false,
-  0,
-  (500)[("Jean", "Sunglass")]
-);
-let tabbitha = new Person("Tabbitha", false, false, 0, 1000);
+let charles = new PersonBuilder("Charles")
+  .withMoney(500)
+  .withList(["Jean", "Sunglass"])
+  .build();
+
+let tabbitha = new PersonBuilder("Tabbitha").withMoney(1000).build();
+console.log(sue.toString());
+console.log(charles.toString());
