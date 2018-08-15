@@ -1,4 +1,5 @@
 // this is suppose to run in browser
+const localStorage = require("./localStorage");
 console.log("localStorage length:", localStorage.length);
 
 let uid = localStorage.getItem("user_id");
