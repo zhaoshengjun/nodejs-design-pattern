@@ -1,5 +1,7 @@
 const path = require("path");
-const fs = require("fs");
+let FSProxy = require("./fsProxy");
+
+const fs = new FSProxy(require("fs"));
 
 let txtFile = path.join(__dirname, "readme.txt");
 let mdFile = path.join(__dirname, "readme.md");
