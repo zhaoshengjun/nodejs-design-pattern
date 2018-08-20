@@ -5,8 +5,13 @@ class Store {
   }
 
   find(itemName) {
-    let index = this.inventory.map(item => item.name).indexOf(itemName);
-    return this.inventory[index];
+    let mapArray = [];
+    for (let prop in this.inventory) {
+      console.log(prop);
+      mapArray = [...mapArray, ...this.inventory[prop]];
+    }
+    let index = mapArray.map(item => item.name).indexOf(itemName);
+    return mapArray[index];
   }
 }
 
