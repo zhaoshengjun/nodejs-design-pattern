@@ -1,17 +1,21 @@
+const Storage = require("./storage");
 class Store {
   constructor(name, inventory = []) {
     this.name = name;
-    this.inventory = inventory;
+    let floor = new Storage("store floor", inventory.floor);
+    let backroom = new Storage("store backroom", inventory.backroom);
+    let localStore = new Storage("nearby store", inventory.localStore, 1);
+    let warehouse = new Storage("warehouse", inventory.warehouse, 5);
+
+    floor.setNext(backroom);
+    backroom.setNext(localStore);
+    localStore.setNext(warehouse);
+
+    this.storage = floor;
   }
 
   find(itemName) {
-    let mapArray = [];
-    for (let prop in this.inventory) {
-      console.log(prop);
-      mapArray = [...mapArray, ...this.inventory[prop]];
-    }
-    let index = mapArray.map(item => item.name).indexOf(itemName);
-    return mapArray[index];
+    return this.storage.find(itemName);
   }
 }
 
