@@ -9,7 +9,6 @@ let eve = new Shopper("Eve");
 let sharon = new Shopper("Sharon");
 let mike = new Shopper("Mike");
 let valleyMall = new Mall();
-
 catsAndThings.subscribe(alex);
 catsAndThings.subscribe(eve);
 catsAndThings.subscribe(mike);
